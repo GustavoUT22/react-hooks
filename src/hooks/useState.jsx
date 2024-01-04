@@ -1,26 +1,26 @@
 import { useState } from "react";
 
 function UsingUseState() {
+  const [count, setCount] = useState(5);
+  const [theme, setTheme] = useState("blue");
   // const [state, setState] = useState({ count: 4, theme: "blue" });
   // const { count } = state;
   // const { theme } = state;
-  const [count, setCount] = useState(5);
-  const [theme, setTheme] = useState("blue");
 
   function decrementCount() {
+    setCount((prevState) => prevState - 1);
+    setTheme("red");
     // setState((prevState) => {
     //   return { ...prevState, count: prevState.count - 1 };
     // });
-    setCount((prevState) => prevState - 1);
-    setTheme("red");
   }
 
   function incrementCount() {
+    setCount((prevState) => prevState + 1);
+    setTheme("green");
     // setState((prevState) => {
     //   return { ...prevState, count: prevState.count + 1 };
     // });
-    setCount((prevState) => prevState + 1);
-    setTheme("green");
   }
 
   return (
